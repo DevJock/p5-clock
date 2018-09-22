@@ -13,9 +13,8 @@ let m = 0;
 let s = 0;
 
 function scaler() {
-	let scaler = 0.025;
 	radius = Width / 12;
-	textFontSize = Width * scaler;
+	textFontSize = radius / 4;
 	textCircleRadius = radius / 1.5;
 	thickness = radius / 2;
 	padding = thickness;
@@ -24,7 +23,6 @@ function scaler() {
 function setup() {
 	scaler();
 	createCanvas(Width, Height);
-	textSize(textFontSize);
 	textAlign(CENTER, CENTER);
 	ellipseMode(CENTER);
 	rectMode(CENTER);
@@ -39,7 +37,8 @@ function draw() {
 	s = second();
 	fill(75);
 	textSize(Width / 100);
-	text("&copy Chiraag Bangera 2018", Width / 2, Height - 50);
+	text("Ⓒ Chiraag Bangera 2018", Width / 2, Height - 50);
+	textSize(textFontSize);
 	translate(Width / 2, Height / 2);
 	fill(125, 125, 125);
 	ellipse(0, 0, radius - textCircleRadius / 2, radius - textCircleRadius / 2);
